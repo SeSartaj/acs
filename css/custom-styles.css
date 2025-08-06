@@ -226,8 +226,9 @@
 
 .hero-title {
   font-size: 1.4rem;
-  line-height: 2rem;
+  line-height: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -428,5 +429,109 @@
     background-color: rgba(37, 150, 190, 0.1);
     border-radius: 4px;
     padding: 0.5rem 1rem;
+  }
+}
+
+/* Timeline icon size adjustments */
+.timeline > li .timeline-image {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+@media (min-width: 768px) {
+  .timeline > li .timeline-image {
+    width: 70px !important;
+    height: 70px !important;
+    margin-left: -35px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .timeline > li .timeline-image {
+    width: 80px !important;
+    height: 80px !important;
+    margin-left: -40px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .timeline > li .timeline-image {
+    width: 90px !important;
+    height: 90px !important;
+    margin-left: -45px !important;
+  }
+}
+
+.hero-slogan {
+  color: white;
+  font-size: 2.5rem; /* ~text-4xl */
+  font-weight: 300; /* Extra bold */
+  letter-spacing: 0.05em; /* tracking-wide */
+  text-align: center;
+  line-height: 1.3;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .hero-slogan {
+    font-size: 3rem; /* ~text-5xl for medium screens and up */
+  }
+}
+
+.hero-slogan .highlight-orange {
+  color: #ff5e00; /* Tailwind's yellow-400 (#facc15) */
+}
+
+.hero-slogan .highlight-green {
+  color: #c6ff00;
+}
+
+/* Background image and dark overlay */
+.hero {
+  background: url("/assets/img/construction01.jpg") cover no-repeat;
+  position: relative;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.65); /* dark overlay */
+  padding: 3rem 1.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-slogan {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.hero-slogan .highlight {
+  color: #c6ff00; /* Safety yellow */
+}
+
+@media (max-width: 900px) {
+  .masthead .features {
+    display: none;
   }
 }
