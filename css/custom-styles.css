@@ -1,0 +1,432 @@
+:root {
+  --color-primary: #2596be;
+  --color-accent: #f4a261;
+  --color-text-light: #ffffff;
+  --color-text-dark: #1d3557;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-feature-bg: rgba(3, 3, 3, 0.329);
+  --color-icon-green: #22c55e;
+  --color-btn-hover: #16324f;
+}
+
+.masthead {
+  position: relative;
+  background: url("your-image.jpg") center/cover no-repeat;
+  height: 100vh;
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.masthead .overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 1;
+}
+
+.masthead .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Beautiful Underline Styles */
+.text-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+/* Option 1: Gradient Underline */
+.text-underline-gradient {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-gradient::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.text-underline-gradient:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Option 2: Animated Underline */
+.text-underline-animated {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-animated::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.text-underline-animated:hover::after {
+  transform: scaleX(1);
+}
+
+/* Option 3: Double Underline */
+.text-underline-double {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-double::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 0 var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.text-underline-double:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Option 4: Wavy Underline */
+.text-underline-wavy {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-wavy::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-primary) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.text-underline-wavy:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Option 5: Glow Underline */
+.text-underline-glow {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-glow::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary)
+  );
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(37, 150, 190, 0.5);
+}
+
+.text-underline-glow:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(37, 150, 190, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(37, 150, 190, 0.8);
+  }
+}
+
+/* Option 6: Simple Elegant Underline */
+.text-underline-simple {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-underline-simple::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.text-underline-simple:hover::after {
+  transform: scaleX(1);
+}
+
+/* Construction Hero Typography - Unique Class Names */
+.hero-subtitle {
+  font-size: 0.9rem;
+  font-style: normal;
+  line-height: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #ffffff;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+}
+
+/* Construction-themed underline for highlighted text */
+.text-underline-gradient {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.text-underline-gradient::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #2596be, #f4a261, #2596be);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+  box-shadow: 0 2px 4px rgba(37, 150, 190, 0.3);
+}
+
+.text-underline-gradient:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 992px) {
+  .hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 5px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2.5px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+  .hero-subtitle {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 6px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 3px;
+  }
+}
+
+/* Professional Text Highlight - Corporate/Government Style */
+.text-highlight {
+  position: relative;
+  color: #ffffff;
+  background: var(--color-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  padding: 0 1px;
+}
+
+/* Solid Background Highlight - Smaller, No Line Break */
+.text-highlight-solid {
+  position: relative;
+  color: #ffffff;
+  background: var(--color-primary);
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-weight: 800;
+  display: inline;
+  white-space: nowrap;
+}
+
+/* Alternative: Primary Color Highlight */
+.text-highlight-primary {
+  position: relative;
+  color: #ffffff;
+  background: #2596be;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-weight: 800;
+  display: inline;
+  white-space: nowrap;
+}
+
+/* Alternative: Subtle Border Highlight */
+.text-highlight-border {
+  position: relative;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 0px 2px;
+  border: 1px solid #f4a261;
+  border-radius: 2px;
+  background: rgba(244, 162, 97, 0.1);
+  display: inline;
+  white-space: nowrap;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.features span {
+  background-color: var(--color-feature-bg);
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features i {
+  color: var(--color-icon-green);
+}
+
+/* Navbar Active State Styling */
+.navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Ensure proper contrast for navbar links */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+}
+
+/* Mobile navbar active state */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link.active {
+    background-color: rgba(37, 150, 190, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+  }
+}
