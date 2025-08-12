@@ -531,7 +531,7 @@
 }
 
 @media (max-width: 900px) {
-  .masthead .features {
+  .masthead .hero-slogan {
     display: none;
   }
 }
